@@ -1,10 +1,10 @@
 
--- -------------------------------------------------------------------------------------------------------------------------------------------
--- -----------------------------------------------------Walmart Sales Data Analysis-----------------------------------------------------------
--- -------------------------------------------------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------Walmart Sales Data Analysis---------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
--- creating a new data base names 'salesDataWalmart'
+-- creating a new database named 'salesDataWalmart' 
 create database if not exists salesDataWalmart; 
 
 
@@ -30,10 +30,10 @@ create table if not exists sales(
     );
     
 
--- --------------------------------------------------------Feature Engineering--------------------------------------------------------------- 
+-- --------------------------------------------------------------Feature Engineering----------------------------------------------------------------------------- 
 
 
--- creating a column 'time_of_day' with respect to the 'time' column 
+-- creating a new column 'time_of_day' with respect to the 'time' column 
 select
 	time,
     (case when time between '00:00:00' and '11:59:59' then 'morning'
@@ -54,7 +54,7 @@ update sales set time_of_day =
     
     
     
--- creating a column 'dayname' with respect to the 'date' column 
+-- creating a new column 'dayname' with respect to the 'date' column 
 select 
 	date,
     dayname(date)
@@ -65,7 +65,7 @@ update sales set dayname = dayname(date);
 
 
 
--- creating a column 'month' with respect to the 'date' column 
+-- creating a new column 'month' with respect to the 'date' column 
 select 
 	date,
     monthname(date)
@@ -76,7 +76,7 @@ update sales set month = monthname(date);
 
 
 
--- --------------------------------------------------------Exploratory Data Analysis----------------------------------------------------------
+-- ----------------------------------------------------------------Exploratory Data Analysis---------------------------------------------------------------------
 
 
 -- -----------------------Product--------------------------
@@ -128,12 +128,12 @@ order by total_revenue desc;
 -- The highest revenue is on January and the lowest on February
 
 
--- Which month has the largest cogs:
+-- Which month has the largest COGS:
 select month, sum(cogs) as total_cogs
 from sales
 group by month
 order by total_cogs desc;
--- January has the largest cogs
+-- January has the largest COGS
 
 
 -- Which product brings in the largest revenue?
@@ -141,7 +141,7 @@ select product_line, sum(total) as total_revenue
 from sales
 group by product_line
 order by total_revenue desc;
--- Food and beverages brings in the targest revenue 
+-- Food and beverages brings in the largest revenue 
 
 
 -- Which city and branch has the largest revenue?
@@ -182,7 +182,7 @@ order by average_rating desc;
 -- Home and lifestyle has the lowest rating 
 
 
--- Write the status as 'Good' if the total_sales of a product_line is greater than the average total_sales else 'Bad' 
+-- Write the status as 'Good' if the total sales of the product line is greater than the average total sales else write 'Bad' 
 -- Creating a view table named as 'total_sale' 
 select product_line, sum(total) as total_sales 
 from sales
@@ -233,13 +233,12 @@ order by total_revenue desc;
 -- The member customers bring in more revenue as compared to the Normal customers
 
 
--- Which city has the highest vat in average?
+-- Which city has the highest vat on average?
 select city, round(avg(vat), 2) as average_vat
 from sales 
 group by city
 order by average_vat desc;
--- Naypyitaw charges the highest vat in average
-
+-- Naypyitaw charges the highest vat on average
 
 
 -- Which customer type pays more vat on average?
@@ -248,6 +247,7 @@ from sales
 group by customer_type
 order by average_vat desc;
 -- The member customers pay slightly higher vat on average
+
 
 
 -- -------------------------Customer----------------------------
@@ -275,18 +275,21 @@ select gender, count(gender) as gender_count
 from sales
 where branch = 'A'
 group by gender;
+-- In branch A male is more common than female
 
 -- Branch B
 select gender, count(gender) as gender_count
 from sales
 where branch = 'B'
 group by gender;
+-- In branch B male is more common than female
 
 -- Branch C
 select gender, count(gender) as gender_count
 from sales
 where branch = 'C'
 group by gender;
+-- In branch C female is more common than male
 
 
 -- Which day of the week gets the most rating on average for each branch?
@@ -315,8 +318,8 @@ order by average_rating desc;
 -- Saturday gets the most average rating in Branch C
 
 
--- ------------------------------------------------------------------------------------------------------------------------------------------
--- ------------------------------------------------------------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
