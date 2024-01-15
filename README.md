@@ -3,15 +3,13 @@
 
 ## Project Overview
 
-This project is dedicated to the comprehensive exploration of Walmart sales data with the objective of gaining insights into the performance of distinct branches and products. The analysis aims to discern patterns in sales trends across various product categories and delve into customer behavior. Through this exploration, the project seeks to provide valuable insights that contribute to the refinement and improvement of sales strategies within the Walmart retail framework. The dataset has been obtained from the [Kaggle Walmart Sales Forecasting Competition](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
+This project is dedicated to the comprehensive exploration of Walmart sales data with the objective of gaining insights into the performance of distinct branches and product lines. The analysis aims to identify patterns in sales trends across various product categories and delve into customer behavior. Through this exploration, the project seeks to provide valuable insights that contribute to the refinement and improvement of sales strategies within the Walmart retail framework. 
+The dataset has been obtained from the [Kaggle Walmart Sales Forecasting Competition](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting).
 
-## Purposes Of The Project
-
-The major aim of thie project is to gain insight into the sales data of Walmart to understand the different factors that affect sales of the different branches.
 
 ## About the Data
 
-The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting). This dataset contains sales transactions from three different branches of Walmart namely Mandalay, Yangon and Naypyitaw. The data contains 17 columns and 1000 rows:
+The dataset contains sales transactions from three different branches of Walmart namely Mandalay, Yangon and Naypyitaw. The data contains 17 columns and 1000 rows:
 
 | Column                  | Description                             | Data Type      |
 | :---------------------- | :-------------------------------------- | :------------- |
@@ -38,11 +36,11 @@ The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition]
 
 1. Product Analysis
 
-> Conduct analysis on the data to understand the different product lines, the products lines performing best and the product lines that need to be improved.
+> Conduct analysis on the data to understand the different product lines, the products lines that are performing well and the product lines that need to be improved.
 
 2. Sales Analysis
 
-> This analysis aims to answer the question of the sales trends of product. The result of this can help use measure the effectiveness of each sales strategy the business applies and what modificatoins are needed to gain more sales.
+> This analysis aims to answer the question of the sales trends of the different product categories across all branches. The result of this would help us to measure the effectiveness of each sales strategy the business applies and what modificatoins are needed to increase sales.
 
 3. Customer Analysis
 
@@ -51,18 +49,18 @@ The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition]
 
 ## Approach Used
 
-1. **Data Wrangling:** In the initial phase, the data undergoes an inspection to identify and address instances of **Null** values and missing data. Robust data replacement methodologies are then employed to substitute missing or **Null** values, ensuring the integrity and completeness of the dataset. 
+1. **Data Wrangling:** In the initial phase, the data undergoes an inspection to identify and address instances of **Null** values and missing data. Robust data replacement methodologies are then employed to substitute missing or **Null** values, ensuring data integrity and completeness. 
 
 > 1. Build a database
 > 2. Create table and insert the table columns as per the dataset.
-> 3. Importing data to the created table
+> 3. Import data to the created table
 
 2. **Feature Engineering:** In this step we will  generate some new features or columns from the existing ones.
 
-> 1. We will add a new column named `time_of_day` to give insight of sales in the Morning, Afternoon and Evening. This will help answer the question on which part of the day most sales are made.
+> 1. We will add a new column named `time_of_day` to give insights on sales in the Morning, Afternoon, and Evening. This will help answer the question on which part of the day most sales are made.
 
-> 2. We will add a new column named `dayname` that would contain the days of the week on which the given transaction took place (Mon, Tue, Wed, Thur, Fri, Sat, Sun). This will help answer the question on which day od the week each branch is busiest.
+> 2. We will add another named `dayname` that would contain the days of the week on which the given transaction took place (Mon, Tue, Wed, Thur, Fri, Sat, Sun). This will help answer the question on which day of the week each branch is busiest.
 
-> 3. We will add a new column named `month` that would contain the months of the year on which the given transaction took place (Jan, Feb, Mar,...). Thsi will help to determine which month of the year has the most sales.
+> 3. We will add one more column named `month` that would contain the months of the year on which the given transaction took place (Jan, Feb, Mar,...). This will help to determine which month of the year has the most sales.
 
-3. **Exploratory Data Analysis (EDA):** An exploratory data analysis is done to answer various questions regarding the Product Lines, Sales, and Customers which is the aim of this project.
+3. **Exploratory Data Analysis (EDA):** An exploratory data analysis is done to answer various business questions regarding the Product Lines, Sales, and Customers which is the main aim of this project.
