@@ -117,7 +117,7 @@ select product_line, sum(quantity) qty
 from sales
 group by product_line
 order by qty desc;
--- The most selling product is Electronic accesories 
+-- The most selling product is Electronic Accessories 
 
 
 -- What is the total revenue by month?
@@ -125,7 +125,7 @@ select month, sum(total) as total_revenue
 from sales
 group by month
 order by total_revenue desc; 
--- The highest revenue is on January and the lowest on February
+-- The highest revenue is in January and the lowest in February
 
 
 -- Which month has the largest COGS:
@@ -165,12 +165,12 @@ select product_line, gender, count(gender) as total_count
 from sales
 group by product_line, gender
 order by total_count desc;
--- Fashion accessories is most common between Female
--- Food and beverages is most common between Female
--- Health and beauty is most common between Male
--- Sports and travel is most common between Female
--- Electronic accessories is most common between Male
--- Home and lifestyle is most common between Male
+-- Fashion accessories is most common among Female
+-- Food and beverages is most common among Female
+-- Health and beauty is most common among Male
+-- Sports and travel is most common among Female
+-- Electronic accessories is most common among Male
+-- Home and lifestyle is most common among Male
 
 
 -- What is the average rating of each product line?
